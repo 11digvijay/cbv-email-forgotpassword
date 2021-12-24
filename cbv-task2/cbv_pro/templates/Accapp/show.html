@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container" style="width:60%">
+    <table class="table table-striped" style="width:90%;margin:auto">
+        <tr>
+            <th>Company</th>
+            <th>Model Name</th>
+            <th>Ram</th>
+            <th>Rom</th>
+            <th>Processor</th>
+            <th>Price</th>
+            <th>Weight</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+        {% for lap in lap_obj %}
+        <tr>
+            <td>{{lap.company}}</td>
+            <td>{{lap.model_name}}</td>
+            <td>{{lap.ram}}</td>
+            <td>{{lap.rom}}</td>
+            <td>{{lap.proc}}</td>
+            <td>{{lap.price}}</td>
+            <td>{{lap.weight}}</td>
+            <td><a href="{% url 'delete' lap.id %}"><button class="btn btn-danger">Delete</button></a></td>
+            <td><a href="{% url 'update' lap.id %}"><button class="btn btn-warning">Update</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

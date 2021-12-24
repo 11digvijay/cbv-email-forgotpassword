@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  <h2 style="text-align: center;">Laptop</h2>
+    <div class="container" style="width:30%" >
+        <form method="post" class="jumbotorn" style="width:50%">
+            {% csrf_token %}
+            {{form|crispy}}
+        <input type="submit" value=" Add Laptop" class="btn btn-success">
+        </form>
+    </div>
+
+
+
+{% endblock %}

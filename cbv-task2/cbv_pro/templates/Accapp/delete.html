@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+ <h2 style="text-align: center;" >Delete</h2>
+    <div class="container" style="width : 40%">
+         <form method="post" class="jumbotorn" style="width:50%">
+        {% csrf_token %}
+             <a href="{% url 'delete' lap_obj.id %}"><button class="btn btn-danger">Delete</button></a>
+             <p>Are you want to delete ?</p>
+         </form>
+        <br>
+        <a href="{% url 'show_lap' %}"><button class="btn btn-success">Cancel</button></a>
+    </div>
+{% endblock %}
